@@ -20,7 +20,7 @@ func init() {
 func main() {
 	defer bass.BassFree()
 
-	bassPlayer, err := bass.NewBass(3)
+	bassPlayer, err := bass.NewBass(-1)
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +28,7 @@ func main() {
 
 	fmt.Printf("curr device: %+v\n", devices[bass.BASS_GetDevice()].Name())
 
-	err = bassPlayer.OpenFile("F:\\workspace\\gomod\\ehotel\\bass\\example\\Alarm08试.wav")
+	err = bassPlayer.OpenFile("example/Alarm08试.wav")
 	if err != nil {
 		panic(err)
 	}
